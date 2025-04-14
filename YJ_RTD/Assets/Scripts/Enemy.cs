@@ -6,8 +6,9 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 1;
     private int currentHealth;
     private int currentIndex = 0;
-    void Start()
+    public void Initialize(int wave)
     {
+        maxHealth = 1 + wave * 3;
         currentHealth = maxHealth;
     }
     void Update()

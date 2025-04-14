@@ -57,6 +57,7 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject prefab = isBoss ? bossEnemyPrefab : normalEnemyPrefab;
         Vector3 spawnPos = TileManager.Instance.GetTileAt(0, 9).transform.position;
-        Instantiate(prefab, spawnPos, Quaternion.identity);
+        GameObject enemyObj = Instantiate(prefab, spawnPos, Quaternion.identity);
+        enemyObj.GetComponent<Enemy>().Initialize(currentWave);
     }
 }
